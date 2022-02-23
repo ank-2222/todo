@@ -39,3 +39,11 @@ button{
     border: none;
     
 }
+.del{
+  
+  max-height:fit-content;
+}
+
+.section{
+  display: flex;
+}
