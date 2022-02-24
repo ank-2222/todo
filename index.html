@@ -13,7 +13,58 @@
       crossorigin="anonymous"
     />
 
-    <title>Hello, world!</title>
+    <title>ToDo</title>
+    <style>
+      /* 
+  * {
+
+    box-sizing: border-box;
+  } */
+  body{
+    background-color: #141822;   
+  }
+ 
+  #main{
+    background-color: #141822; 
+
+  }
+  #input-content{
+    width: 300px;
+    cursor: pointer;
+}
+ 
+.text{
+    background: none;
+    border: none;
+    color: black;
+    font-size: larger;
+    font-weight: 600;
+    flex:1 1 0%;
+
+}
+.text:focus{
+    outline: none;
+}
+
+button{
+    background:none;
+    outline: none;
+    color: white;
+    border: none;
+    
+}
+.del{
+  
+  max-height:fit-content;
+}
+
+.section{
+  display: flex;
+}
+#saveshow{
+  display: none;
+}
+    </style>
   </head>
 
   <body>
