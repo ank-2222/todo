@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
 
-    <title>toDo</title>
+    <title>Hello, world!</title>
   </head>
 
   <body>
@@ -21,13 +21,15 @@
       <h1 class="h1 display-2 text-center mt-5" style="color: white">
         ToDo List
       </h1>
-      <div class="container text-center my-4" id="input-area">
+      <div class="container text-center d-flex justify-content-center my-4" id="input-area">
         <input
           type="form-control text"
           id="input-content"
           placeholder="What are your plans today?"
         />
+        <input type="hidden" id="getindex">
         <button id="addshow">Add</button>
+        <button id="saveshow">Save</button>
       </div>
       <div class="container d-flex justify-content-between">
         <h3 style="color: white; margin-left: 1.5rem" id="listname">Lists</h3>
