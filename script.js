@@ -52,7 +52,9 @@ function showtask() {
     html += `
         <div class="section  justify-content-between bg-warning my-3 rounded align-item-center" >
         <p class=" m-2 text " >${data}</p>
+        <button class="m-2 edit bg-dark rounded " type="button" onclick="edittask(${index})" >Edit</button>
         <button class="m-2 del bg-dark rounded " type="button" onclick="deletetask(${index})" >Delete</button>
+       
       
     </div>
         `;
@@ -87,3 +89,41 @@ searchbox.addEventListener("focusout",function(e){
   showtask();
 })
 
+//edittask function
+
+function edittask(index){
+  document.getElementById("getindex").value=index;
+  let webtask= localStorage.getItem("localtask");
+  if(webtask==null) taskobj=[];
+  else  taskjob= JSON.parse(webtask);
+  let inputcontent= document.getElementById("input-content");
+  inputcontent.value=taskjob[index];
+  let savebtn=document.getElementById("saveshow");
+  let addbtn= document.getElementById("addshow");
+  addbtn.style.display="none";
+  savebtn.style.display="flex";
+  inputcontent.onfocus();
+}
+
+//savetask
+let savebtn= document.getElementById("saveshow");
+savebtn.addEventListener("click",()=>{
+  let addbtn= document.getElementById("addshow");
+
+  let inputval=document.getElementById("input-content");
+if(inputval!=''){
+  let indexnum=document.getElementById("getindex").value;
+  let webtask= localStorage.getItem("localtask");
+  if(webtask==null) taskobj=[];
+  else  taskjob= JSON.parse(webtask);
+  taskjob[indexnum]=inputval.value;
+ 
+  localStorage.setItem("localtask",JSON.stringify(taskjob));
+  inputval.value="";
+  showtask();
+  addbtn.style.display="flex";
+  savebtn.style.display="none";
+}
+
+
+})
