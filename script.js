@@ -2,15 +2,19 @@ showtask();
 
 document.getElementById("addshow").addEventListener("click", addshow);
  
-//keyboard "enter key" functioning
-document.getElementById("input-content").addEventListener("keyup",function(event){
-if(event.keyCode===13){
-  event.preventDefault();
-  addshow();
-  
-}
 
-})
+
+// //keyboard "enter key" functioning
+// document.getElementById("input-content").addEventListener("keyup",function(event){
+
+// if(event.keyCode===13){
+//   event.preventDefault();
+ 
+//   addshow();
+  
+// }
+
+// })
 
 //adding element
 function addshow() {
@@ -38,6 +42,9 @@ function deletetask(index) {
   taskobj.splice(index, 1);
   localStorage.setItem("localtask", JSON.stringify(taskobj));
   showtask();
+  let inputval=document.getElementById("input-content");
+  inputval.value="";
+
 }
 
 
@@ -107,7 +114,9 @@ function edittask(index){
 
 //savetask
 let savebtn= document.getElementById("saveshow");
-savebtn.addEventListener("click",()=>{
+savebtn.addEventListener("click",savetask);
+
+function savetask(){
   let addbtn= document.getElementById("addshow");
 
   let inputval=document.getElementById("input-content");
@@ -124,6 +133,4 @@ if(inputval!=''){
   addbtn.style.display="flex";
   savebtn.style.display="none";
 }
-
-
-})
+}
