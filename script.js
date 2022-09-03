@@ -104,7 +104,7 @@ function edittask(index){
   if(webtask==null) taskobj=[];
   else  taskjob= JSON.parse(webtask);
   let inputcontent= document.getElementById("input-content");
-  inputcontent.value=taskjob[index];
+  inputcontent.value=taskobj[index];
   let savebtn=document.getElementById("saveshow");
   let addbtn= document.getElementById("addshow");
   addbtn.style.display="none";
